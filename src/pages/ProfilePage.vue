@@ -21,10 +21,10 @@
                                         {{ profile.class }}</p>
                                     <!-- SOCIAL MEDIA -->
                                     <div class="social-media d-flex flex-row justify-content-start mb-3 position-absolute">
-                                        <button class="btn btn-light" @click="gitHub()"><i
-                                                class="mdi mdi-github"></i></button>
-                                        <button class="btn btn-light" @click="linkedIn()"><i
-                                                class="mdi mdi-linkedin"></i></button>
+                                        <button class="btn btn-grad p-0 m-0 px-2 border elevation-3 me-3"
+                                            @click="gitHub()"><i class="mdi mdi-github"></i></button>
+                                        <button class="btn btn-grad p-0 m-0 px-2 border elevation-3 me-3"
+                                            @click="linkedIn()"><i class="mdi mdi-linkedin"></i></button>
                                     </div>
                                 </div>
                                 <p class="bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
@@ -116,6 +116,15 @@ export default {
             account: computed(() => AppState.account),
             pageNum: computed(() => AppState.pageNum),
             bio: computed(() => AppState.activeProfile.bio),
+            // SENDS TO GITHUB
+            gitHub() {
+                location.href = this.profile.github
+            },
+
+            // SENDS TO LINKED IN
+            linkedIn() {
+                location.href = this.profile.linkedin
+            }
         }
     }
 }

@@ -8,6 +8,13 @@
     <div class="col-md-9 col-11 p-0 m-0 mb-5">
       <form class="w-100 bg-white mt-5 p-5 rounded border border-2 elevation-5 " @submit.prevent="editAccount()">
         <h1 class="form-heading mb-3">Edit Account?</h1>
+        <!-- NAME -->
+        <div class="mb-3">
+          <label for="nameInput" class="form-label">Change display name?</label>
+          <input type="text" v-model="reqBody.name" class="form-control p-1" id="nameInput"
+            aria-describedby="nameInputHelp">
+          <div id="nameInputHelp" class="form-text">We only support URLs for GIFs and Images.</div>
+        </div>
         <!-- PFP -->
         <div class="mb-3">
           <label for="imgUrl" class="form-label">Insert URL for profile picture.</label>
