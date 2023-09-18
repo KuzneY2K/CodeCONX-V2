@@ -56,6 +56,7 @@ import { ref } from 'vue'
 export default {
   setup() {
 
+    // SEARCH QUERY
     let reqData = ref('cheese')
 
     // GETTING POSTS
