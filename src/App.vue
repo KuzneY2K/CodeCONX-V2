@@ -1,6 +1,6 @@
 <template>
   <header class="sticky-top">
-    <Navbar />
+    <Navbar class="animate__animated animate__fadeInDownBig" />
   </header>
   <main>
     <router-view />

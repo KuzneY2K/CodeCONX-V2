@@ -3,7 +3,8 @@
     <router-link class="navbar-brand d-flex p-0 m-0" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center p-0 m-0">
         <!-- NAV BRAND -->
-        <h1 class="nav-title p-0 m-0 ms-3 ms-md-4"><i class="mdi mdi-xml"></i> CodeCONX</h1>
+        <h1 class="nav-title p-0 m-0 ms-3 ms-md-4"><i class="mdi mdi-xml"></i>
+          CodeCONX</h1>
       </div>
     </router-link>
     <!-- SANDWICH -->
@@ -16,14 +17,14 @@
       <ul class="navbar-nav me-auto">
         <li class="ms-2">
           <router-link :to="{ name: 'Home' }"
-            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50"
+            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50 animate__animated animate__flipInX"
             v-if="account.id">
             Home Page
           </router-link>
         </li>
         <li class="ms-2">
           <router-link :to="{ name: 'Account' }"
-            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50"
+            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50 animate__animated animate__flipInX"
             v-if="account.id">
             My Account
           </router-link>

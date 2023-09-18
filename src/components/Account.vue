@@ -5,13 +5,17 @@
             <br>
             <h1 class="mt-3">{{ props.account.name }}, welcome.</h1>
             <br>
-            <img class="rounded mb-3" :src="props.account.picture" alt="" height="200" />
-            <div class="social-media d-flex flex-row justify-content-between mb-3">
-                <button class="btn btn-light" @click="gitHub()"><i class="mdi mdi-github"></i></button>
-                <button class="btn btn-light" @click="linkedIn()"><i class="mdi mdi-linkedin"></i></button>
+            <img class="rounded mb-3 border border-4 elevation-5" :src="props.account.picture" alt="" height="200" />
+            <div class="account-stuff d-flex flex-column align-items-center">
+                <div class="social-media d-flex flex-row justify-content-around mb-3">
+                    <button class="btn btn-light me-2 border border-dark" @click="gitHub()"><i
+                            class="mdi mdi-github"></i></button>
+                    <button class="btn btn-light ms-2 border border-dark" @click="linkedIn()"><i
+                            class="mdi mdi-linkedin"></i></button>
+                </div>
+                <p class="bg-white text-black rounded elevation-5 w-75 border border-dark">{{ props.account.bio }}</p>
+                <p class="bg-white text-black rounded elevation-5 w-75 border border-dark">{{ props.account.class }}</p>
             </div>
-            <p class="bg-white text-black rounded rounded-pill elevation-5">{{ props.account.bio }}</p>
-            <p class="bg-white text-black rounded rounded-pill elevation-5">{{ props.account.class }}</p>
         </div>
     </div>
 </template>

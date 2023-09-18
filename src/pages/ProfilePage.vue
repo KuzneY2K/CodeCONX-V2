@@ -1,11 +1,11 @@
 <template>
-    <div v-if="profile">
+    <div v-if="profile" class="animate__animated animate__fadeIn">
         <section class="h-100 gradient-custom-2">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100" style="background-image: url();">
                     <div class="col col-lg-9 col-xl-7">
                         <div class="card elevation-5">
-                            <div class="rounded-top text-white d-flex flex-row cover-img position-relative"
+                            <div class="rounded-top text-white d-flex flex-row cover-img position-relative animate__animated animate__fadeIn"
                                 :style="{ backgroundImage: 'url(' + profile.coverImg + ')' }">
                                 <div class="ms-4 mt-5 d-flex flex-column">
                                     <img :src="profile.picture" alt="Generic placeholder image"
@@ -13,11 +13,13 @@
 
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="fs-3 pfname position-absolute badge grad-one py-2 px-2 border elevation-5">{{
-                                        profile.name }}
+                                    <h5
+                                        class="fs-3 pfname position-absolute badge grad-one py-2 px-2 border elevation-5 animate__animated animate__lightSpeedInLeft">
+                                        {{
+                                            profile.name }}
                                     </h5>
                                     <p
-                                        class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass border elevation-5">
+                                        class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass border elevation-5 animate__animated animate__lightSpeedInRight">
                                         {{ profile.class }}</p>
                                     <!-- SOCIAL MEDIA -->
                                     <div class="social-media d-flex flex-row justify-content-start mb-3 position-absolute">
@@ -27,7 +29,8 @@
                                             @click="linkedIn()"><i class="mdi mdi-linkedin"></i></button>
                                     </div>
                                 </div>
-                                <p class="bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
+                                <p class="bio position-absolute m-0 px-5 rounded elevation-5 animate__fadeIn">" {{ bio
+                                }} "</p>
                             </div>
                             <div class="card-body p-0 text-black ">
                                 <div class="p-0 m-0">
@@ -36,7 +39,7 @@
                                 <section v-for="post in posts" :key="post.id"
                                     class="row p-0 m-0 justify-content-center position-relative">
                                     <div class=" mb-5">
-                                        <Post :post="post" v-if="post" />
+                                        <Post class="animate__animated animate__fadeInUp" :post="post" v-if="post" />
                                     </div>
                                 </section>
                             </div>

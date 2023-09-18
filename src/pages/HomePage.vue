@@ -1,26 +1,28 @@
 <template>
   <!-- AD 1 -->
-  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0">
+  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0 animate__animated animate__fadeInDown">
     <div class="col-6 d-flex flex-column align-items-center">
       <img :src="adOne" alt="" height="165" class="mt-4 rounded border elevation-5 ads">
     </div>
   </section>
   <!-- FORM COMPONENT -->
-  <section class="form-container d-flex flex-column align-items-center" v-if="account.id">
+  <section class="form-container d-flex flex-column align-items-center animate__animated animate__fadeIn"
+    v-if="account.id">
     <PostForm />
   </section>
   <!-- SEARCH COMPONENT -->
-  <section class="row p-0 m-0 d-flex flex-row justify-content-center">
+  <section class="row p-0 m-0 d-flex flex-row justify-content-center animate__animated animate__fadeInDownBig">
     <SearchBar />
   </section>
   <!-- AD 2 -->
-  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0">
+  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0 animate__animated animate__fadeInDown">
     <div class="col-6 d-flex flex-column align-items-center">
       <img :src="adTwo" alt="" height="165" class="mt-4 rounded border elevation-5 ads">
     </div>
   </section>
   <!-- POST COMPONENT -->
-  <section class="row p-0 m-0 justify-content-center position-relative" v-for="post in posts" :key="post.id">
+  <section class="row p-0 m-0 justify-content-center position-relative animate__animated animate__fadeIn"
+    v-for="post in posts" :key="post.id">
     <div class="col-12 col-md-6 p-0 m-0 mt-4 ">
       <!-- PASSED IN POST PROP -->
       <Post :post="post" v-if="post" />

@@ -27,7 +27,7 @@
             <div class="mb-3">
                 <label for="bioInput" class="form-label">Insert new bio.</label>
                 <input type="text" v-model="reqBody.bio" class="form-control p-1" id="bioInput"
-                    aria-describedby="bioInputHelp">
+                    aria-describedby="bioInputHelp" maxlength="100">
             </div>
             <!-- Update Cohort -->
             <div class="mb-3">
