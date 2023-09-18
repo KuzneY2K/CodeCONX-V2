@@ -6,16 +6,16 @@
     </div>
   </section>
   <!-- FORM COMPONENT -->
-  <section class="form-container d-flex flex-column align-items-center animate__animated animate__fadeIn"
+  <section class="form-container d-flex flex-column align-items-center animate__animated animate__fadeInDown"
     v-if="account.id">
     <PostForm />
   </section>
   <!-- SEARCH COMPONENT -->
-  <section class="row p-0 m-0 d-flex flex-row justify-content-center animate__animated animate__fadeInDownBig">
+  <section class="row p-0 m-0 d-flex flex-row justify-content-center animate__animated animate__fadeInDown">
     <SearchBar />
   </section>
   <!-- AD 2 -->
-  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0 animate__animated animate__fadeInDown">
+  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0 animate__animated animate__fadeInDownBig">
     <div class="col-6 d-flex flex-column align-items-center">
       <img :src="adTwo" alt="" height="165" class="mt-4 rounded border elevation-5 ads">
     </div>
