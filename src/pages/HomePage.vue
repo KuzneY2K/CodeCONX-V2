@@ -4,9 +4,11 @@
     <PostForm />
   </section>
   <!-- AD 1 -->
-  <div class="col-6 d-flex flex-column align-items-center">
-    <img :src="adOne" alt="" height="100" class="mt-4 rounded elevation-5 ads">
-  </div>
+  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0">
+    <div class="col-6 d-flex flex-column align-items-center">
+      <img :src="adOne" alt="" height="125" class="mt-4 rounded border elevation-5 ads">
+    </div>
+  </section>
   <!-- SEARCH -->
   <section class="row p-0 m-0 d-flex flex-row justify-content-center">
     <form class="p-0 m-0 px-3" @submit.prevent="getPostsByQuery()">
@@ -27,9 +29,11 @@
     </form>
   </section>
   <!-- AD 2 -->
-  <div class="col-6 d-flex flex-column align-items-center">
-    <img :src="adTwo" alt="" height="100" class="mt-4 rounded elevation-5 ads">
-  </div>
+  <section class="row adContainer d-flex flex-column align-items-center p-0 m-0">
+    <div class="col-6 d-flex flex-column align-items-center">
+      <img :src="adTwo" alt="" height="125" class="mt-4 rounded border elevation-5 ads">
+    </div>
+  </section>
   <!--  POST  -->
   <section v-for="post in posts" :key="post.id" class="row p-0 m-0 justify-content-center position-relative">
     <div class="col-12 col-md-6 p-0 m-0 mt-4">
@@ -121,24 +125,30 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style scoped>
+@media (max-width: 768px) {
+  .ads {
+    height: 75px;
+  }
+}
+
 .home {
   display: grid;
   height: 80vh;
   place-content: center;
   text-align: center;
   user-select: none;
+}
 
-  .home-card {
-    width: 50vw;
+.home-card {
+  width: 50vw;
+}
 
-    >img {
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+.img {
+  height: 200px;
+  max-width: 200px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 </style>

@@ -1,8 +1,4 @@
 <template>
-    <!-- ADS -->
-    <div class="col-6 d-flex flex-column align-items-center">
-        <img :src="adOne" alt="" height="100" class="mt-4 rounded border elevation-5 ads">
-    </div>
     <div class="col-md-6 col-12 px-3">
         <form class="w-100 bg-white mt-4 p-5 rounded border border-2 elevation-5" @submit.prevent="createPost()">
             <h1 class="form-heading mb-3">Create A CONX Post?</h1>
@@ -19,10 +15,6 @@
             </div>
             <button type="submit" class="btn btn-grad px-4 py-2 border border-1 border-dark elevation-5">Submit</button>
         </form>
-    </div>
-    <!-- ADS -->
-    <div class="col-6 d-flex flex-column align-items-center">
-        <img :src="adTwo" alt="" height="100" class="mt-4 rounded border elevation-5 ads">
     </div>
 </template>
 
@@ -45,8 +37,6 @@ export default {
 
         onMounted(() => { getAds() })
         return {
-            adOne: computed(() => AppState.adOne),
-            adTwo: computed(() => AppState.adTwo),
             reqBody,
             account: computed(() => AppState.account),
             async createPost() {

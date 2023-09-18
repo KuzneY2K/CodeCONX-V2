@@ -44,6 +44,12 @@ body {
   font-family: 'DM Sans' !important;
 }
 
+@media (max-width: 768px) {
+  .ads {
+    height: 75px;
+  }
+}
+
 #app {
   display: flex;
   flex-direction: column;

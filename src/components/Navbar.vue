@@ -5,7 +5,7 @@
         <h1 class="nav-title p-0 m-0 ms-3 ms-md-4"><i class="mdi mdi-xml"></i> CodeCONX</h1>
       </div>
     </router-link>
-    <button class="navbar-toggler p-0 m-0 px-2 py-1 me-4" type="button" data-bs-toggle="collapse"
+    <button class="navbar-toggler p-0 m-0 px-2 py-1 me-3" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
