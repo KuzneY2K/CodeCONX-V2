@@ -2,7 +2,7 @@
     <div v-if="profile" class="animate__animated animate__fadeIn">
         <Ads />
         <section class="h-100 gradient-custom-2">
-            <div class="container py-5 h-100">
+            <div class="container pt-4 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100" style="background-image: url();">
                     <div class="col col-lg-9 col-xl-7">
                         <div class="card elevation-5">
@@ -47,6 +47,7 @@
                         </div>
                     </div>
                 </div>
+                <MoreAds />
             </div>
             <div v-if="posts" class="col-12 p-0 m-0 d-flex flex-row justify-content-between px-5 mt-4 mb-4">
                 <button v-if="pageNum <= 1" class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
@@ -143,6 +144,10 @@ export default {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.bio::-webkit-scrollbar {
+    display: none;
 }
 
 .pfname {
