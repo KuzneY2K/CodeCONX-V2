@@ -14,7 +14,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <!-- NAV LIST -->
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto d-md-flex flex-row justify-content-center mt-3 mb-3">
         <li class="ms-2">
           <router-link :to="{ name: 'Home' }"
             class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50 animate__animated animate__flipInX"
