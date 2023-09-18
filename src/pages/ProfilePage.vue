@@ -13,12 +13,14 @@
 
                                 </div>
                                 <div class="ms-3">
-                                    <h5 class="fs-3 pfname position-absolute badge grad-one py-2 px-2">{{ profile.name }}
+                                    <h5 class="fs-3 pfname position-absolute badge grad-one py-2 px-2 border elevation-5">{{
+                                        profile.name }}
                                     </h5>
-                                    <p class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass">
+                                    <p
+                                        class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass border elevation-5">
                                         {{ profile.class }}</p>
                                 </div>
-                                <p class="fs-4 bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
+                                <p class="bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
                             </div>
                             <div class="card-body p-0 text-black ">
                                 <div class="p-0 m-0">
@@ -122,13 +124,13 @@ export default {
 
 .pfname {
     top: 5rem;
-    max-width: 12rem;
+    max-width: 15rem;
     overflow: hidden;
 }
 
 .pfclass {
     top: 8rem;
-    max-width: 12rem;
+    max-width: 15rem;
     overflow: hidden;
 }
 
@@ -142,6 +144,10 @@ export default {
         height: 7rem !important;
         width: 7rem !important;
     }
+
+    .bio {
+        font-size: 1.2rem !important;
+    }
 }
 
 .bio {
@@ -150,5 +156,6 @@ export default {
     bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.476);
     width: 100%;
+    font-size: 1.3rem;
 }
 </style>
