@@ -174,7 +174,7 @@ export default {
 }
 
 .bio {
-    overflow: hidden !important;
+    overflow: scroll !important;
     height: 100px;
     bottom: 1rem;
     background-color: rgba(0, 0, 0, 0.476);
