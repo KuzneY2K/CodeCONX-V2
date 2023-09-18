@@ -48,7 +48,8 @@
                     aria-describedby="linkedinUrlHelp">
             </div>
             <!-- SUBMIT -->
-            <button type="submit" class="btn btn-grad px-4 py-2 border border-1 border-dark elevation-5">Submit</button>
+            <button type="submit" class="btn btn-grad m-0 px-4 py-2 border border-1 border-dark elevation-5">Apply
+                Changes</button>
         </form>
     </div>
 </template>
