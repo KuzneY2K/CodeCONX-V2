@@ -2,9 +2,11 @@
   <nav class="navbar navbar-expand-lg navbar-dark grad-one p-0 m-0 py-md-5 py-4 elevation-5">
     <router-link class="navbar-brand d-flex p-0 m-0" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center p-0 m-0">
+        <!-- NAV BRAND -->
         <h1 class="nav-title p-0 m-0 ms-3 ms-md-4"><i class="mdi mdi-xml"></i> CodeCONX</h1>
       </div>
     </router-link>
+    <!-- SANDWICH -->
     <button class="navbar-toggler p-0 m-0 px-2 py-1 me-3" type="button" data-bs-toggle="collapse"
       data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
