@@ -89,11 +89,18 @@ class PostsService {
 
     // GET ADS
     async getAds() {
-        let res = await api.get('api/ads')
+        let res = await api.get('/api/ads')
         AppState.adOne = res.data[0].banner
         AppState.adTwo = res.data[1].banner
-        logger.log(AppState.adOne)
-        logger.log(AppState.adTwo)
+    }
+
+    // GET POSTS BY QUERY
+    async getPostsByQuery(query) {
+        AppState.posts = []
+        let res = await api.get(`/api/posts?query=${query}`)
+        logger.log(`RES ${res.data.posts}`)
+        AppState.posts = res.data.posts.map(post => new Post(post))
+        Pop.success(`Showing post result for search: ${query}`)
     }
 
     // CREATE POST

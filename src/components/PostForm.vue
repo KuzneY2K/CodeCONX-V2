@@ -1,7 +1,7 @@
 <template>
     <!-- ADS -->
     <div class="col-6 d-flex flex-column align-items-center">
-        <img :src="adOne" alt="" height="100" class="mt-4 rounded border elevation-5">
+        <img :src="adOne" alt="" height="100" class="mt-4 rounded border elevation-5 ads">
     </div>
     <div class="col-md-6 col-12 px-3">
         <form class="w-100 bg-white mt-4 p-5 rounded border border-2 elevation-5" @submit.prevent="createPost()">
@@ -22,7 +22,7 @@
     </div>
     <!-- ADS -->
     <div class="col-6 d-flex flex-column align-items-center">
-        <img :src="adTwo" alt="" height="100" class="mt-4 rounded border elevation-5">
+        <img :src="adTwo" alt="" height="100" class="mt-4 rounded border elevation-5 ads">
     </div>
 </template>
 
@@ -64,4 +64,10 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+@media (max-width: 768px) {
+    .ads {
+        height: 75px;
+    }
+}
+</style>

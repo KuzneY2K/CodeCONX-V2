@@ -5,11 +5,11 @@
       Login
     </button>
     <div v-else>
-      <div class="dropdown my-2 my-lg-0 me-md-4 me-4 d-flex flex-row justify-content-end">
+      <div class="dropdown my-2 my-lg-0 me-md-4 me-4 d-flex flex-row justify-content-start ms-5">
         <div type="button" class="border-0 selectable no-select rounded rounded-pill" data-bs-toggle="dropdown"
           aria-expanded="false">
-          <div v-if="account.picture || user.picture">
-            <img :src="account.picture || user.picture" alt="account photo" height="60"
+          <div v-if="account.picture || user.picture" class="d-flex flex-column align-items-center">
+            <img :src="account.picture || user.picture" alt="account photo" height="70"
               class="rounded rounded-pill elevation-5" />
           </div>
         </div>

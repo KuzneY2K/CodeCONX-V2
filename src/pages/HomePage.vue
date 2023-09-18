@@ -4,16 +4,23 @@
     <PostForm />
   </section>
   <!-- SEARCH -->
-  <section class="row p-0 m-0 d-flex flex-row justify-content-center mt-4">
-    <div class="col-6 p-0 m-0 ">
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <span class="input-group-text" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+  <section class="row p-0 m-0 d-flex flex-row justify-content-center">
+    <form class="p-0 m-0 px-3" @submit.prevent="getPostsByQuery()">
+      <div class="row mt-3">
+        <div class="col-md-6 mx-auto">
+          <div class="small fw-light">Search posts by query.</div>
+          <div class="input-group">
+            <input class="form-control elevation-5 rounded" type="search" id="example-search-input" v-model="reqData"
+              placeholder="Enter query">
+            <span class="input-group-append">
+              <button class="btn btn-grad p-0 m-0 px-3 py-2 bg-white rounded elevation-5" type="submit">
+                <i class="mdi mdi-magnify"></i>
+              </button>
+            </span>
+          </div>
         </div>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-          aria-describedby="basic-addon1">
       </div>
-    </div>
+    </form>
   </section>
   <!--  POST  -->
   <section v-for="post in posts" :key="post.id" class="row p-0 m-0 justify-content-center position-relative">
@@ -42,12 +49,14 @@
 import { logger } from '../utils/Logger.js'
 import { postsService } from '../services/postsService.js'
 import Pop from '../utils/Pop.js'
-import { computed, onMounted, watchEffect } from 'vue'
+import { computed, onMounted } from 'vue'
 import { AppState } from '../AppState.js'
 import { ref } from 'vue'
 
 export default {
   setup() {
+
+    let reqData = ref('cheese')
 
     // GETTING POSTS
     async function getPosts() {
@@ -75,9 +84,20 @@ export default {
     return {
       pageUp,
       pageDown,
+      reqData,
       posts: computed(() => AppState.posts),
       pageNum: computed(() => AppState.pageNum),
       account: computed(() => AppState.account),
+      // GET POSTS BY QUERY
+      async getPostsByQuery() {
+        try {
+          logger.log('[GETTING POSTS BY QUERY]')
+          logger.log(reqData.value)
+          await postsService.getPostsByQuery(reqData.value)
+        } catch (error) {
+          Pop.error(error)
+        }
+      }
     }
   }
 }
