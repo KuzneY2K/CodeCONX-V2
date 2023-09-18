@@ -1,7 +1,7 @@
 <template>
   <span class="navbar-text">
-    <button class="btn selectable text-success lighten-30 text-uppercase my-2 my-lg-0" @click="login"
-      v-if="!user.isAuthenticated">
+    <button class="btn selectable text-light lighten-30 text-uppercase my-2 my-lg-0 me-3 btn-grad p-0 px-4 py-2 border"
+      @click="login" v-if="!user.isAuthenticated">
       Login
     </button>
     <div v-else>
