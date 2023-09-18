@@ -31,10 +31,12 @@ import { AppState } from '../AppState.js';
 
 export default {
     setup() {
+        // FORM DATA
         let reqBody = ref({})
         return {
             reqBody,
             account: computed(() => AppState.account),
+            // CREATE POST FUNCTION
             async createPost() {
                 try {
                     logger.log('[CREATING POST]')
