@@ -101,6 +101,8 @@ export default {
       pageUp,
       pageDown,
       reqData,
+      adOne: computed(() => AppState.adOne),
+      adTwo: computed(() => AppState.adTwo),
       posts: computed(() => AppState.posts),
       pageNum: computed(() => AppState.pageNum),
       account: computed(() => AppState.account),

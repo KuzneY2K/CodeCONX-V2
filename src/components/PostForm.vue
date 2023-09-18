@@ -64,10 +64,4 @@ export default {
 }
 </script>
 
-<style scoped>
-@media (max-width: 768px) {
-    .ads {
-        height: 75px;
-    }
-}
-</style>
+<style scoped></style>
