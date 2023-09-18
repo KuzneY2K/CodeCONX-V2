@@ -1,5 +1,6 @@
 <template>
     <div class="col-12 p-0 m-0">
+        <!-- SEARCH FORM -->
         <form class="p-0 m-0 px-3" @submit.prevent="getPostsByQuery()">
             <div class="row mt-3">
                 <div class="col-md-6 mx-auto">
@@ -8,6 +9,7 @@
                         <input class="form-control elevation-5 rounded" type="search" id="example-search-input"
                             v-model="reqData" placeholder="Enter query">
                         <span class="input-group-append">
+                            <!-- SUBMIT -->
                             <button class="btn btn-grad p-0 m-0 px-3 py-2 bg-white rounded elevation-5" type="submit">
                                 <i class="mdi mdi-magnify"></i>
                             </button>
@@ -27,9 +29,11 @@ import { postsService } from '../services/postsService.js';
 
 export default {
     setup() {
+        // QUERY DATA
         let reqData = ref('cheese')
         return {
             reqData,
+            // GET POSTS BY QUERY FUNCTION
             async getPostsByQuery() {
                 try {
                     logger.log('[GETTING POSTS BY QUERY]')
