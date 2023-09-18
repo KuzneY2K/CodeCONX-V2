@@ -24,10 +24,14 @@
 </template>
 
 <script>
+import { computed } from 'vue';
 import Login from './Login.vue';
+import { AppState } from '../AppState.js';
 export default {
   setup() {
-    return {}
+    return {
+      account: computed(() => AppState.account)
+    }
   },
   components: { Login }
 }
