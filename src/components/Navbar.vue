@@ -12,6 +12,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
+      <!-- NAV LIST -->
       <ul class="navbar-nav me-auto">
         <li class="ms-5">
           <router-link :to="{ name: 'Account' }"
