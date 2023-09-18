@@ -5,17 +5,21 @@
                 <div class="row d-flex justify-content-center align-items-center h-100" style="background-image: url();">
                     <div class="col col-lg-9 col-xl-7">
                         <div class="card elevation-5">
-                            <div class="rounded-top text-white d-flex flex-row cover-img"
+                            <div class="rounded-top text-white d-flex flex-row cover-img position-relative"
                                 :style="{ backgroundImage: 'url(' + profile.coverImg + ')' }">
-                                <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+                                <div class="ms-4 mt-5 d-flex flex-column">
                                     <img :src="profile.picture" alt="Generic placeholder image"
-                                        class="img-fluid img-thumbnail mt-4 mb-2 pfp" style="width: 150px; z-index: 1">
+                                        class="img-fluid img-thumbnail mt-4 mb-2 pfp">
 
                                 </div>
-                                <div class="ms-3" style="margin-top: 130px;">
-                                    <h5 class="fs-2">{{ profile.name }}</h5>
-                                    <p class="fs-4 bio">{{ bio }}</p>
+                                <div class="ms-3">
+                                    <h5 class="fs-3 pfname position-absolute badge grad-one py-2 px-2">{{ profile.name }}
+                                    </h5>
+                                    <p class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass">Cohort: {{
+                                        profile.class
+                                    }}</p>
                                 </div>
+                                <p class="fs-4 bio position-absolute px-5">" {{ bio }} "</p>
                             </div>
                             <div class="card-body p-0 text-black ">
                                 <div class="p-0 m-0">
@@ -111,19 +115,31 @@ export default {
 
 <style scoped>
 .cover-img {
-    height: 300px;
+    height: 22rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+.pfname {
+    top: 5rem;
+}
+
 .pfp {
-    height: 150px;
-    width: 200px !important;
+    height: 8rem !important;
+    width: 8rem !important;
+}
+
+@media (max-width: 768px) {
+    .pfp {
+        height: 7rem !important;
+        width: 7rem !important;
+    }
 }
 
 .bio {
     overflow: hidden !important;
     height: 100px;
+    bottom: 1rem;
 }
 </style>
