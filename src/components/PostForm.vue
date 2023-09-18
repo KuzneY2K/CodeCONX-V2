@@ -24,18 +24,10 @@ import { postsService } from '../services/postsService.js';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { AppState } from '../AppState.js';
-import { onMounted } from 'vue';
 
 export default {
     setup() {
         let reqBody = ref({})
-
-        async function getAds() {
-            logger.log('GETTING ADS')
-            await postsService.getAds()
-        }
-
-        onMounted(() => { getAds() })
         return {
             reqBody,
             account: computed(() => AppState.account),
