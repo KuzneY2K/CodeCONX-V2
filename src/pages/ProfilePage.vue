@@ -1,5 +1,6 @@
 <template>
     <div v-if="profile" class="animate__animated animate__fadeIn">
+        <Ads />
         <section class="h-100 gradient-custom-2">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100" style="background-image: url();">
@@ -68,7 +69,6 @@
 import { computed, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { AppState } from '../AppState.js';
-import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { profilesService } from '../services/ProfilesService.js'
 import { postsService } from '../services/postsService.js';
