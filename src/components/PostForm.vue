@@ -39,7 +39,7 @@ export default {
             // CREATE POST FUNCTION
             async createPost() {
                 try {
-                    logger.log('[CREATING POST]')
+                    // logger.log('[CREATING POST]')
                     await postsService.createPost(reqBody.value)
                     reqBody.value = {}
                     await postsService.getPosts()

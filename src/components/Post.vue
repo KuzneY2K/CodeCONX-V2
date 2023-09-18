@@ -4,7 +4,8 @@
             <div class="p-0 m-0 px-3 card-wrapper">
                 <div class="m-0 p-0 bg-white border border-2 rounded elevation-5 mt-2">
                     <div class="card-heading">
-                        <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">
+                        <div
+                            class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom elevation-2 rounded">
                             <div class="d-flex flex-row align-items-center feed-text px-2">
                                 <!-- PROFILE PICTURE -->
                                 <router-link :to="{ name: 'Profile', params: { profileId: props.post.creatorId } }"
@@ -28,7 +29,7 @@
                         </div>
                     </div>
                     <!-- POST BODY -->
-                    <div class="p-2 px-3"><b class="fs-5">{{ props.post.body }}</b></div>
+                    <div class="p-2 px-3 post"><b class="fs-5">{{ props.post.body }}</b></div>
                     <div v-if="props.post.imgUrl" class="media-container mt-3 px-4">
                         <img :src="props.post.imgUrl" alt="" class="media img-fluid rounded elevation-1 mb-3">
                     </div>
@@ -60,7 +61,7 @@
 import { computed } from 'vue';
 import { AppState } from '../AppState.js';
 import { Post } from '../models/Post.js';
-import { logger } from '../utils/Logger.js';
+// import { logger } from '../utils/Logger.js';
 import { postsService } from '../services/postsService.js';
 import Pop from '../utils/Pop.js';
 
@@ -82,10 +83,10 @@ export default {
                 if (await Pop.confirm('Confirm deletion?')) {
                     try {
                         let postId = props.post.id
-                        logger.log('[REMOVING POST ❌]', postId)
+                        // logger.log('[REMOVING POST ❌]', postId)
                         await postsService.deletePost(postId)
                         await postsService.getPosts()
-                        logger.log('[POST REMOVED]')
+                        // logger.log('[POST REMOVED]')
                     } catch (error) {
                         Pop.error(error)
                     }
@@ -99,7 +100,7 @@ export default {
                 try {
                     let postId = props.post.id
                     await postsService.likePost(postId)
-                    logger.log('[LIKED or UNLIKED]')
+                    // logger.log('[LIKED or UNLIKED]')
                     await postsService.getPostById(postId)
                     postsService.getPostsByPage()
                 } catch (error) {
@@ -114,8 +115,17 @@ export default {
 <style scoped>
 .media {
     object-fit: cover;
-    height: 400px;
+    height: 25rem;
     width: 100%;
+}
+
+.post {
+    max-height: 12rem;
+    overflow-y: scroll;
+}
+
+.post::-webkit-scrollbar {
+    display: none;
 }
 
 .pfp {

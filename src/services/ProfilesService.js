@@ -9,7 +9,7 @@ class ProfilesService {
 
     async getProfileById(profileId) {
         try {
-            logger.log('[GETTING PROFILE BY ID]')
+            // logger.log('[GETTING PROFILE BY ID]')
             AppState.activeProfile = null
             // Clears out the old active profile so that its not there when first loading
             let res = await api.get(`api/profiles/${profileId}`)
@@ -30,7 +30,7 @@ class ProfilesService {
 
     async getAccount() {
         let res = await api.get('/account')
-        logger.log(res)
+        // logger.log(res)
     }
 
     async editAccount(reqData) {

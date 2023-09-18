@@ -92,14 +92,14 @@ export default {
 
         // PAGE DOWN - GET OLDER POSTS
         async function pageDownByProfileId() {
-            logger.log('[HOME / GETTING OLDER POSTS 🔎]')
+            // logger.log('[HOME / GETTING OLDER POSTS 🔎]')
             await postsService.pageDownByProfileId(route.params.profileId)
             window.scrollTo(0, 0)
         }
 
         // PAGE UP - GET RECENT POSTS
         async function pageUpByProfileId() {
-            logger.log('[HOME / GETTING RECENT POSTS 🔎]')
+            // logger.log('[HOME / GETTING RECENT POSTS 🔎]')
             await postsService.pageUpByProfileId(route.params.profileId)
             window.scrollTo(0, 0)
         }

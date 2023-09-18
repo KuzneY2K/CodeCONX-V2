@@ -45,13 +45,13 @@ export default {
   setup() {
     // GET ADS FUNCTION
     async function getAds() {
-      logger.log('GETTING ADS');
+      // logger.log('GETTING ADS');
       await postsService.getAds();
     }
     // GET POSTS
     async function getPosts() {
       try {
-        logger.log('[HOME / GETTING POSTS 🔎]');
+        // logger.log('[HOME / GETTING POSTS 🔎]');
         await postsService.getPosts();
       }
       catch (error) {

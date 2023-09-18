@@ -9,11 +9,11 @@ class PostsService {
     // GET POSTS
     async getPosts() {
         try {
-            logger.log('[Service GET Request Fired]')
+            // logger.log('[Service GET Request Fired]')
             let res = await api.get('/api/posts')
             // logger.log(res.data)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error('[SERVICE GET ERROR]')
             logger.log(error)
@@ -25,7 +25,7 @@ class PostsService {
         try {
             let res = await api.get(`/api/posts?page=${AppState.pageNum}`)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error(error)
         }
@@ -35,10 +35,10 @@ class PostsService {
     async pageDown() {
         try {
             AppState.pageNum += 1
-            logger.log(`Page ${AppState.pageNum}`)
+            // logger.log(`Page ${AppState.pageNum}`)
             let res = await api.get(`/api/posts?page=${AppState.pageNum}`)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error('[SERVICE GET PAGE DOWM ERROR]')
             logger.log(error)
@@ -49,10 +49,10 @@ class PostsService {
     async pageUp() {
         try {
             AppState.pageNum = AppState.pageNum <= 0 ? AppState.pageNum = 0 : AppState.pageNum -= 1
-            logger.log(`Page ${AppState.pageNum}`)
+            // logger.log(`Page ${AppState.pageNum}`)
             let res = await api.get(`/api/posts?page=${AppState.pageNum}`)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error('[SERVICE GET PAGE UP ERROR]')
             logger.log(error)
@@ -63,10 +63,10 @@ class PostsService {
     async pageDownByProfileId(profileId) {
         try {
             AppState.pageNum += 1
-            logger.log(`Page ${AppState.pageNum}`)
+            // logger.log(`Page ${AppState.pageNum}`)
             let res = await api.get(`/api/profiles/${profileId}/posts?page=${AppState.pageNum}`)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error('[ERROR]: Are you sure this user has made enough posts?')
             logger.log(error)
@@ -77,10 +77,10 @@ class PostsService {
     async pageUpByProfileId(profileId) {
         try {
             AppState.pageNum = AppState.pageNum <= 0 ? AppState.pageNum = 0 : AppState.pageNum -= 1
-            logger.log(`Page ${AppState.pageNum}`)
+            // logger.log(`Page ${AppState.pageNum}`)
             let res = await api.get(`/api/profiles/${profileId}/posts?page=${AppState.pageNum}`)
             AppState.posts = res.data.posts.map(post => new Post(post))
-            logger.log(AppState.posts)
+            // logger.log(AppState.posts)
         } catch (error) {
             Pop.error('[SERVICE GET PAGE UP ERROR]')
             logger.log(error)
@@ -98,7 +98,7 @@ class PostsService {
     async getPostsByQuery(query) {
         AppState.posts = []
         let res = await api.get(`/api/posts?query=${query}`)
-        logger.log(`RES ${res.data.posts}`)
+        // logger.log(`RES ${res.data.posts}`)
         AppState.posts = res.data.posts.map(post => new Post(post))
         Pop.success(`Showing post result for search: ${query}`)
     }
@@ -106,7 +106,7 @@ class PostsService {
     // CREATE POST
     async createPost(data) {
         let res = await api.post('/api/posts', data)
-        logger.log(res.data)
+        // logger.log(res.data)
         let newPost = new Post(res.data)
         AppState.posts.push(newPost)
     }
@@ -114,7 +114,7 @@ class PostsService {
     // DELETE POST
     async deletePost(postId) {
         let res = await api.delete(`/api/posts/${postId}`)
-        logger.log(res)
+        // logger.log(res)
         let reloadedList = AppState.posts.filter(post => post.id != postId)
         AppState.posts = reloadedList
     }
@@ -122,13 +122,13 @@ class PostsService {
     // LIKE POST
     async likePost(postId) {
         let res = await api.post(`/api/posts/${postId}/like`)
-        logger.log(res.data)
+        // logger.log(res.data)
     }
 
     // GET BY ID
     async getPostById(postId) {
         let res = await api.get(`/api/posts/${postId}`)
-        logger.log(res)
+        // logger.log(res)
     }
 }
 

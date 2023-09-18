@@ -36,7 +36,7 @@ export default {
     setup(props) {
 
         async function getAccount() {
-            logger.log('ACCOUNT')
+            // logger.log('ACCOUNT')
             await profilesService.getAccount()
         }
 
