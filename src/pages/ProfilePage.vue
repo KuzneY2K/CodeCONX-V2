@@ -18,7 +18,7 @@
                                     <p class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass">
                                         {{ profile.class }}</p>
                                 </div>
-                                <p class="fs-4 bio position-absolute m-0 px-5 rounded border">" {{ bio }} "</p>
+                                <p class="fs-4 bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
                             </div>
                             <div class="card-body p-0 text-black ">
                                 <div class="p-0 m-0">
