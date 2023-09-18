@@ -14,9 +14,17 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <!-- NAV LIST -->
       <ul class="navbar-nav me-auto">
-        <li class="ms-5">
+        <li class="ms-2">
+          <router-link :to="{ name: 'Home' }"
+            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50"
+            v-if="account.id">
+            Home Page
+          </router-link>
+        </li>
+        <li class="ms-2">
           <router-link :to="{ name: 'Account' }"
-            class="btn selectable text-light text-uppercase my-2 me-3 btn-grad p-0 px-4 py-2 border" v-if="account.id">
+            class="btn selectable text-light text-uppercase m-0 ms-2 my-2 btn-grad p-0 px-4 py-2 border w-md-50"
+            v-if="account.id">
             My Account
           </router-link>
         </li>

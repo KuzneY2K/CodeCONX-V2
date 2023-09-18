@@ -68,7 +68,7 @@ class PostsService {
             AppState.posts = res.data.posts.map(post => new Post(post))
             logger.log(AppState.posts)
         } catch (error) {
-            Pop.error('[SERVICE GET PAGE DOWM ERROR]')
+            Pop.error('[ERROR]: Are you sure this user has made enough posts?')
             logger.log(error)
         }
     }

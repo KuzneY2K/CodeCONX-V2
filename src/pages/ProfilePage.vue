@@ -19,6 +19,13 @@
                                     <p
                                         class="fs-5 p-0 m-0 position-absolute badge grad-one py-2 px-2 pfclass border elevation-5">
                                         {{ profile.class }}</p>
+                                    <!-- SOCIAL MEDIA -->
+                                    <div class="social-media d-flex flex-row justify-content-start mb-3 position-absolute">
+                                        <button class="btn btn-light" @click="gitHub()"><i
+                                                class="mdi mdi-github"></i></button>
+                                        <button class="btn btn-light" @click="linkedIn()"><i
+                                                class="mdi mdi-linkedin"></i></button>
+                                    </div>
                                 </div>
                                 <p class="bio position-absolute m-0 px-5 rounded elevation-5">" {{ bio }} "</p>
                             </div>
@@ -32,26 +39,23 @@
                                         <Post :post="post" v-if="post" />
                                     </div>
                                 </section>
-                                <div v-if="posts"
-                                    class="col-12 p-0 m-0 d-flex flex-row justify-content-between px-5 mt-4 mb-4">
-                                    <button v-if="pageNum <= 1"
-                                        class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
-                                        @click="pageUpByProfileId()" disabled><i class="mdi mdi-arrow-left"></i>
-                                        New
-                                        Posts</button>
-                                    <button v-if="pageNum >= 2"
-                                        class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
-                                        @click="pageUpByProfileId()"><i class="mdi mdi-arrow-left"></i>
-                                        New
-                                        Posts</button>
-                                    <button class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
-                                        @click="pageDownByProfileId()">Old Posts
-                                        <i class="mdi mdi-arrow-right"></i></button>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div v-if="posts" class="col-12 p-0 m-0 d-flex flex-row justify-content-between px-5 mt-4 mb-4">
+                <button v-if="pageNum <= 1" class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
+                    @click="pageUpByProfileId()" disabled><i class="mdi mdi-arrow-left"></i>
+                    New
+                    Posts</button>
+                <button v-if="pageNum >= 2" class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
+                    @click="pageUpByProfileId()"><i class="mdi mdi-arrow-left"></i>
+                    New
+                    Posts</button>
+                <button class="p-0 m-0 btn btn-grad px-4 py-2 border border-1 border-dark elevation-5"
+                    @click="pageDownByProfileId()">Old Posts
+                    <i class="mdi mdi-arrow-right"></i></button>
             </div>
         </section>
     </div>
@@ -83,15 +87,18 @@ export default {
             await profilesService.getPostsByProfileId(route.params.profileId)
         }
 
+        // PAGE DOWN - GET OLDER POSTS
         async function pageDownByProfileId() {
             logger.log('[HOME / GETTING OLDER POSTS 🔎]')
             await postsService.pageDownByProfileId(route.params.profileId)
+            window.scrollTo(0, 0)
         }
 
         // PAGE UP - GET RECENT POSTS
         async function pageUpByProfileId() {
             logger.log('[HOME / GETTING RECENT POSTS 🔎]')
             await postsService.pageUpByProfileId(route.params.profileId)
+            window.scrollTo(0, 0)
         }
 
 
@@ -115,6 +122,10 @@ export default {
 </script>
 
 <style scoped>
+.social-media {
+    top: 11rem;
+}
+
 .cover-img {
     height: 22rem;
     background-size: cover;

@@ -20,8 +20,8 @@
     </div>
   </section>
   <!-- POST COMPONENT -->
-  <section v-for="post in posts" :key="post.id" class="row p-0 m-0 justify-content-center position-relative">
-    <div class="col-12 col-md-6 p-0 m-0 mt-4">
+  <section class="row p-0 m-0 justify-content-center position-relative" v-for="post in posts" :key="post.id">
+    <div class="col-12 col-md-6 p-0 m-0 mt-4 ">
       <!-- PASSED IN POST PROP -->
       <Post :post="post" v-if="post" />
     </div>

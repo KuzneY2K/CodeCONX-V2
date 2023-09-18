@@ -5,7 +5,7 @@
       Login
     </button>
     <div v-else>
-      <div class="dropdown my-2 my-lg-0 me-md-4 me-4 d-flex flex-row justify-content-start ms-5">
+      <div class="dropdown my-2 my-lg-0 me-md-4 me-4 d-flex flex-row justify-content-start ms-3">
         <div type="button" class="border-0 selectable no-select rounded rounded-pill" data-bs-toggle="dropdown"
           aria-expanded="false">
           <div v-if="account.picture || user.picture" class="d-flex flex-column align-items-center">

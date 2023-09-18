@@ -3,9 +3,13 @@
         :style="{ backgroundImage: 'url(' + account.coverImg + ')' }">
         <div class="about text-center">
             <br>
-            <h1>{{ props.account.name }}, welcome.</h1>
+            <h1 class="mt-3">{{ props.account.name }}, welcome.</h1>
             <br>
             <img class="rounded mb-3" :src="props.account.picture" alt="" height="200" />
+            <div class="social-media d-flex flex-row justify-content-between mb-3">
+                <button class="btn btn-light" @click="gitHub()"><i class="mdi mdi-github"></i></button>
+                <button class="btn btn-light" @click="linkedIn()"><i class="mdi mdi-linkedin"></i></button>
+            </div>
             <p class="bg-white text-black rounded rounded-pill elevation-5">{{ props.account.bio }}</p>
             <p class="bg-white text-black rounded rounded-pill elevation-5">{{ props.account.class }}</p>
         </div>
@@ -33,6 +37,16 @@ export default {
 
         return {
             props,
+
+            // SENDS TO GITHUB
+            gitHub() {
+                location.href = props.account.github
+            },
+
+            // SENDS TO LINKED IN
+            linkedIn() {
+                location.href = props.account.linkedin
+            }
         }
     }
 }
@@ -40,7 +54,7 @@ export default {
 
 <style scoped>
 .cover-img {
-    height: 400px;
+    height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

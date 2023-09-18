@@ -7,7 +7,7 @@
   </main>
   <footer class="grad-one text-center p-0 m-0 py-4 elevation-5">
     <div class="text-center p-0 m-0 text-light">
-      CodeCONX 2023
+      © KuzneY2K / CodeWorks / CodeCONX 23
     </div>
   </footer>
 </template>

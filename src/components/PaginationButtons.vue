@@ -28,12 +28,14 @@ export default {
         async function pageDown() {
             logger.log('[HOME / GETTING OLDER POSTS 🔎]')
             await postsService.pageDown()
+            window.scrollTo(0, 0)
         }
 
         // PAGE UP - GET RECENT POSTS
         async function pageUp() {
             logger.log('[HOME / GETTING RECENT POSTS 🔎]')
             await postsService.pageUp()
+            window.scrollTo(0, 0)
         }
         return {
             pageUp,
