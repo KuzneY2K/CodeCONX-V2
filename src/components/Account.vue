@@ -3,18 +3,23 @@
         :style="{ backgroundImage: 'url(' + account.coverImg + ')' }">
         <div class="about text-center">
             <br>
-            <h1 class="mt-3">{{ props.account.name }}, welcome.</h1>
+            <h1 class="mt-3 animate__animated animate__fadeInDownBig">{{ props.account.name }}, welcome.</h1>
             <br>
-            <img class="rounded mb-3 border border-4 elevation-5" :src="props.account.picture" alt="" height="200" />
+            <img class="rounded mb-3 border border-4 elevation-5 animate__animated animate__fadeInUpBig"
+                :src="props.account.picture" alt="" height="200" />
             <div class="account-stuff d-flex flex-column align-items-center">
                 <div class="social-media d-flex flex-row justify-content-around mb-3">
-                    <button class="btn btn-light me-2 border border-dark" @click="gitHub()"><i
-                            class="mdi mdi-github"></i></button>
-                    <button class="btn btn-light ms-2 border border-dark" @click="linkedIn()"><i
-                            class="mdi mdi-linkedin"></i></button>
+                    <button class="btn btn-light me-2 border border-dark animate__animated animate__fadeIn"
+                        @click="gitHub()"><i class="mdi mdi-github"></i></button>
+                    <button class="btn btn-light ms-2 border border-dark animate__animated animate__fadeIn"
+                        @click="linkedIn()"><i class="mdi mdi-linkedin"></i></button>
                 </div>
-                <p class="bg-white text-black rounded elevation-5 w-75 border border-dark">{{ props.account.bio }}</p>
-                <p class="bg-white text-black rounded elevation-5 w-75 border border-dark">{{ props.account.class }}</p>
+                <p
+                    class="bg-white text-black rounded elevation-5 w-75 border border-dark animate__animated animate__lightSpeedInLeft">
+                    {{ props.account.bio }}</p>
+                <p
+                    class="bg-white text-black rounded elevation-5 w-75 border border-dark animate__animated animate__lightSpeedInRight">
+                    {{ props.account.class }}</p>
             </div>
         </div>
     </div>
