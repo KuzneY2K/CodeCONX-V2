@@ -12,8 +12,9 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li class="ms-5">
-          <router-link :to="{ name: 'Account' }" class="btn text-success lighten-30 selectable text-uppercase">
-            MyAccount
+          <router-link :to="{ name: 'Account' }"
+            class="btn selectable text-light text-uppercase my-2 me-3 btn-grad p-0 px-4 py-2 border" v-if="account.id">
+            My Account
           </router-link>
         </li>
       </ul>

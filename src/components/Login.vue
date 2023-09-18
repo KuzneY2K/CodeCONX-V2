@@ -1,7 +1,7 @@
 <template>
   <span class="navbar-text">
-    <button class="btn selectable text-light lighten-30 text-uppercase my-2 my-lg-0 me-3 btn-grad p-0 px-4 py-2 border"
-      @click="login" v-if="!user.isAuthenticated">
+    <button class="btn selectable text-light text-uppercase my-2 me-3 btn-grad p-0 px-4 py-2 border" @click="login"
+      v-if="!user.isAuthenticated">
       Login
     </button>
     <div v-else>
@@ -9,8 +9,8 @@
         <div type="button" class="border-0 selectable no-select rounded rounded-pill" data-bs-toggle="dropdown"
           aria-expanded="false">
           <div v-if="account.picture || user.picture" class="d-flex flex-column align-items-center">
-            <img :src="account.picture || user.picture" alt="account photo" height="70"
-              class="rounded rounded-pill elevation-5" />
+            <img :src="account.picture || user.picture" alt="account photo" height="60"
+              class="rounded rounded-pill elevation-5 border" />
           </div>
         </div>
         <div class="dropdown-menu dropdown-menu-lg-end dropdown-menu-start p-0" aria-labelledby="authDropdown">
