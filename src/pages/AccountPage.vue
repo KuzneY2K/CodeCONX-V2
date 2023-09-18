@@ -1,11 +1,11 @@
 <template>
   <section class="row p-0 m-0 d-flex flex-column align-items-center">
     <div class="col-md-10 p-0 m-0 px-3">
-      <Account class="animate__animated animate__fadeIn" v-if="account.id" :account="account" />
+      <Account class="animate__animated animate__fadeInDown" v-if="account.id" :account="account" />
     </div>
   </section>
   <section class="row p-0 m-0 d-flex flex-row justify-content-center">
-    <EditAccount class="animate__animated animate__fadeIn" />
+    <EditAccount class="animate__animated animate__fadeInUpBig" />
   </section>
 </template>
 <script>
