@@ -42,10 +42,11 @@
                         <button v-if="myAccount.id"
                             class="grad-one rounded rounded-pill elevation-3 p-0 m-0 px-2 py-1 mb-3 ms-2"
                             @click="likePost()">
-                            <i class="mdi mdi-heart-outline text-white"
+                            <i class="mdi mdi-heart-outline text-white animate__animated animate__jackInTheBox"
                                 v-if="!props.post.likeIds.includes(myAccount.id)"></i>
 
-                            <i class="mdi mdi-heart text-white" v-if="props.post.likeIds.includes(myAccount.id)"></i>
+                            <i class="mdi mdi-heart text-white animate__animated animate__jackInTheBox"
+                                v-if="props.post.likeIds.includes(myAccount.id)"></i>
 
                             <span class="text-light ms-2 fs-5">{{ likes.length }}</span></button>
                     </div>
